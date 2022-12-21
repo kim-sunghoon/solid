@@ -7,9 +7,7 @@
 
 from abc import ABCMeta, abstractproperty
 
-class Shape(object):
-    __metaclass__ = ABCMeta
-
+class Shape(object, metaclass=ABCMeta):
     @abstractproperty
     def area(self):
         pass
@@ -44,7 +42,7 @@ def main():
     shapes = [Rectangle(1, 6), Rectangle(2, 3)]
     calculator = AreaCalculator(shapes)
 
-    print "The total area is: ", calculator.total_area
+    print("The total area is: ", calculator.total_area)
 
 if __name__ == '__main__':
     main()
