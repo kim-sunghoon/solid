@@ -3,9 +3,7 @@
 
 from abc import ABCMeta, abstractmethod
 
-class IEmail(object):
-    __metaclass__ = ABCMeta
-
+class IEmail(object, metaclass=ABCMeta):
     @abstractmethod
     def set_sender(self, sender):
         pass
@@ -56,7 +54,7 @@ def main():
     email.set_sender('qmal')
     email.setReceiver('james')
     email.set_content('Hello, there!')
-    print email
+    print(email)
 
 if __name__ == '__main__':
     main()
